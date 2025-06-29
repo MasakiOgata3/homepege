@@ -16,8 +16,8 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#home">ホーム</a></li>
-                <li><a href="#sr-services">社労士業務</a></li>
                 <li><a href="#ai-services">AI活用支援</a></li>
+                <li><a href="#sr-services">社労士業務</a></li>
                 <li><a href="#pricing">料金</a></li>
                 <li><a href="#about">事務所概要</a></li>
                 <li><a href="#contact">お問い合わせ</a></li>
@@ -48,41 +48,115 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="geometric-shape shape-1"></div>
-                <div class="geometric-shape shape-2"></div>
-                <div class="geometric-shape shape-3"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SR Services Section -->
-    <section id="sr-services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>社会保険労務士業務</h2>
-                <p>労務管理・社会保険の専門知識で企業の基盤を支える従来からの主力サービス</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📋</div>
-                    <h3>労務相談・指導</h3>
-                    <p>労働法に関する相談から実務指導まで、専門知識でサポートします。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📄</div>
-                    <h3>各種手続き代行</h3>
-                    <p>社会保険・労働保険の手続きを迅速かつ正確に代行いたします。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💵</div>
-                    <h3>助成金申請支援</h3>
-                    <p>豊富な経験と最新情報で、最適な助成金の提案から申請まで一貫してサポート。</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>就業規則作成</h3>
-                    <p>企業の実情に合わせた就業規則を法的観点から適切に作成・見直し。</p>
-                </div>
+                <svg class="workflow-diagram" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+                    <!-- 背景の薄いグリッド -->
+                    <defs>
+                        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0f0f0" stroke-width="0.5"/>
+                        </pattern>
+                    </defs>
+                    <rect width="600" height="320" fill="url(#grid)" opacity="0.3"/>
+                    
+                    <!-- Step 1: 従来の業務 -->
+                    <g class="step-1">
+                        <!-- ボックス -->
+                        <rect x="30" y="100" width="120" height="100" fill="none" stroke="#000" stroke-width="2" rx="8"/>
+                        
+                        <!-- 書類のアイコン -->
+                        <rect x="65" y="125" width="50" height="35" fill="none" stroke="#000" stroke-width="1.5"/>
+                        <line x1="70" y1="135" x2="105" y2="135" stroke="#000" stroke-width="1"/>
+                        <line x1="70" y1="142" x2="105" y2="142" stroke="#000" stroke-width="1"/>
+                        <line x1="70" y1="149" x2="95" y2="149" stroke="#000" stroke-width="1"/>
+                        
+                        <!-- ラベル -->
+                        <text x="90" y="220" text-anchor="middle" class="step-label">従来の業務</text>
+                        <text x="90" y="245" text-anchor="middle" class="step-desc">手作業・時間消費</text>
+                    </g>
+                    
+                    <!-- 矢印 1 -->
+                    <g class="arrow-1">
+                        <path d="M 165 150 L 215 150" stroke="#333" stroke-width="2" fill="none"/>
+                        <path d="M 210 145 L 215 150 L 210 155" stroke="#333" stroke-width="2" fill="none"/>
+                    </g>
+                    
+                    <!-- Step 2: AI導入 -->
+                    <g class="step-2">
+                        <!-- ボックス -->
+                        <rect x="230" y="100" width="120" height="100" fill="#f8f8f8" stroke="#000" stroke-width="2" rx="8"/>
+                        
+                        <!-- AIのアイコン（洗練されたニューラルネットワーク） -->
+                        <!-- 中央のコア -->
+                        <circle cx="290" cy="140" r="8" fill="#000"/>
+                        
+                        <!-- ニューラルネットワークのノード -->
+                        <circle cx="270" cy="125" r="4" fill="none" stroke="#000" stroke-width="1.5"/>
+                        <circle cx="270" cy="140" r="4" fill="none" stroke="#000" stroke-width="1.5"/>
+                        <circle cx="270" cy="155" r="4" fill="none" stroke="#000" stroke-width="1.5"/>
+                        
+                        <circle cx="310" cy="125" r="4" fill="none" stroke="#000" stroke-width="1.5"/>
+                        <circle cx="310" cy="140" r="4" fill="none" stroke="#000" stroke-width="1.5"/>
+                        <circle cx="310" cy="155" r="4" fill="none" stroke="#000" stroke-width="1.5"/>
+                        
+                        <!-- 接続線（ニューラルネットワーク） -->
+                        <path d="M 274 125 L 282 140" stroke="#333" stroke-width="1" opacity="0.7"/>
+                        <path d="M 274 140 L 282 140" stroke="#333" stroke-width="1.5" opacity="0.8"/>
+                        <path d="M 274 155 L 282 140" stroke="#333" stroke-width="1" opacity="0.7"/>
+                        
+                        <path d="M 298 140 L 306 125" stroke="#333" stroke-width="1" opacity="0.7"/>
+                        <path d="M 298 140 L 306 140" stroke="#333" stroke-width="1.5" opacity="0.8"/>
+                        <path d="M 298 140 L 306 155" stroke="#333" stroke-width="1" opacity="0.7"/>
+                        
+                        <!-- データフローの視覚化 -->
+                        <path d="M 250 140 L 262 140" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+                        <path d="M 318 140 L 330 140" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+                        
+                        <!-- 矢印マーカーの定義 -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                                    refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+                            </marker>
+                        </defs>
+                        
+                        <!-- ラベル -->
+                        <text x="290" y="220" text-anchor="middle" class="step-label">AI活用</text>
+                        <text x="290" y="245" text-anchor="middle" class="step-desc">自動化・効率化</text>
+                    </g>
+                    
+                    <!-- 矢印 2 -->
+                    <g class="arrow-2">
+                        <path d="M 365 150 L 415 150" stroke="#333" stroke-width="2" fill="none"/>
+                        <path d="M 410 145 L 415 150 L 410 155" stroke="#333" stroke-width="2" fill="none"/>
+                    </g>
+                    
+                    <!-- Step 3: 業務効率化 -->
+                    <g class="step-3">
+                        <!-- ボックス -->
+                        <rect x="430" y="100" width="120" height="100" fill="none" stroke="#000" stroke-width="2" rx="8"/>
+                        
+                        <!-- 効率化のアイコン（上向き矢印とグラフ） -->
+                        <path d="M 490 160 L 490 130 L 485 135 M 490 130 L 495 135" stroke="#000" stroke-width="2" fill="none"/>
+                        <rect x="465" y="165" width="8" height="15" fill="#000"/>
+                        <rect x="475" y="155" width="8" height="25" fill="#000"/>
+                        <rect x="485" y="145" width="8" height="35" fill="#000"/>
+                        <rect x="495" y="135" width="8" height="45" fill="#000"/>
+                        <rect x="505" y="125" width="8" height="55" fill="#000"/>
+                        
+                        <!-- ラベル -->
+                        <text x="490" y="220" text-anchor="middle" class="step-label">業務効率化</text>
+                        <text x="490" y="245" text-anchor="middle" class="step-desc">生産性向上・コスト削減</text>
+                    </g>
+                    
+                    <!-- 全体のプロセスタイトル -->
+                    <text x="300" y="40" text-anchor="middle" class="process-title">デジタル変革プロセス</text>
+                    
+                    <!-- ベネフィットの表示 -->
+                    <g class="benefits">
+                        <text x="300" y="290" text-anchor="middle" class="benefit-text">
+                            労務管理 × AI技術 = 次世代の社労士サービス
+                        </text>
+                    </g>
+                </svg>
             </div>
         </div>
     </section>
@@ -123,6 +197,43 @@
         </div>
     </section>
 
+    <!-- SR Services Section -->
+    <section id="sr-services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>社会保険労務士業務</h2>
+                <p>労務管理・社会保険の専門知識で企業の基盤を支える従来からの主力サービス</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>労務相談・指導</h3>
+                    <p>労働法に関する相談から実務指導まで、専門知識でサポートします。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📄</div>
+                    <h3>各種手続き代行</h3>
+                    <p>社会保険・労働保険の手続きを迅速かつ正確に代行いたします。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>給与計算</h3>
+                    <p>正確で効率的な給与計算業務を代行し、従業員の満足度向上をサポートします。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💵</div>
+                    <h3>助成金申請支援</h3>
+                    <p>豊富な経験と最新情報で、最適な助成金の提案から申請まで一貫してサポート。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>就業規則作成</h3>
+                    <p>企業の実情に合わせた就業規則を法的観点から適切に作成・見直し。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <div class="container">
@@ -139,6 +250,7 @@
                     <ul class="features">
                         <li>基本的な労務相談</li>
                         <li>各種手続き代行</li>
+                        <li>給与計算</li>
                         <li>助成金情報提供</li>
                     </ul>
                     <a href="#contact" class="btn-outline">相談する</a>
@@ -146,7 +258,7 @@
                 <div class="pricing-card featured">
                     <h3>AI活用支援</h3>
                     <div class="price">
-                        <span class="amount">月額 80,000円〜</span>
+                        <span class="amount">月額 70,000円〜</span>
                     </div>
                     <ul class="features">
                         <li>AI導入戦略策定</li>
@@ -181,29 +293,39 @@
                     <h2>事務所概要</h2>
                     <p>
                         尾形社会保険労務士事務所は、伝統的な社労士業務に加え、
-                        企楮のAI活用支援を新たなサービス柱として展開しています。
+                        企業のAI活用支援を新たなサービス柱として展開しています。
                     </p>
                     <p>
                         労務管理の基盤を支えながら、デジタル化時代の新しい経営課題である
                         AI導入・活用を専門的にサポートし、企業の成長を包括的に支援します。
                     </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">200+</span>
-                            <span class="stat-label">サポート企業数</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">95%</span>
-                            <span class="stat-label">お客様満足度</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">10年+</span>
-                            <span class="stat-label">業界経験</span>
+                    
+                    <!-- 代表挨拶セクション -->
+                    <div class="ceo-message">
+                        <h3>代表挨拶</h3>
+                        <p class="greeting-subtitle">
+                            AIの力で、すべての企業に真の生産性革命を。
+                        </p>
+                        <p class="greeting-intro">
+                            代表の尾形でございます。私たちは、確かな社労士業務にAI活用支援を融合させ、業務時間の大幅削減と生産性向上を実現します。
+                        </p>
+                        <p>
+                            「AIは難しそう」と思われている中小企業様にこそ、限られたリソースを最大化するAIの力が必要です。定型業務の自動化、労務相談の迅速化、データ分析の高度化―これらはすべて、今すぐ始められる改革です。
+                        </p>
+                        <p>
+                            単なるツール導入ではなく、成果が出るまで徹底的に伴走します。社労士としての専門知識と最新技術で、法的にも技術的にも最適な解決策をご提供いたします。
+                        </p>
+                        <p>
+                            私自身、生成AIで仕事が劇的に変わりました。この感動を共有し、本来注力すべき創造的な仕事に時間を使える環境を、一緒に作りましょう。
+                        </p>
+                        
+                        <div class="signature">
+                            <p>
+                                <strong>尾形社会保険労務士事務所</strong><br>
+                                <strong>代表 尾形雅基</strong>
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="about-visual">
-                    <div class="geometric-pattern"></div>
                 </div>
             </div>
         </div>
@@ -221,7 +343,7 @@
                     <div class="contact-item">
                         <h3>📞 電話でのお問い合わせ</h3>
                         <p>平日 9:00 - 18:00</p>
-                        <a href="tel:06-6123-4567" class="contact-link">06-6123-4567</a>
+                        <a href="tel:03-6824-6886" class="contact-link">03-6824-6886</a>
                     </div>
                     <div class="contact-item">
                         <h3>✉️ メールでのお問い合わせ</h3>
@@ -230,26 +352,27 @@
                     </div>
                     <div class="contact-item">
                         <h3>📍 所在地</h3>
-                        <p>〒530-0001<br>大阪市北区梅田1-1-1</p>
+                        <p>〒175-0093<br>東京都板橋赤塚新町3-32-11-805</p>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <form action="https://formspree.io/f/manjagqj" method="POST" novalidate>
                         <div class="form-group">
-                            <input type="text" placeholder="会社名" required>
+                            <input type="text" name="company" placeholder="会社名" required autocomplete="organization">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="お名前" required>
+                            <input type="text" name="name" placeholder="お名前" required autocomplete="name">
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="メールアドレス" required>
+                            <input type="email" name="email" placeholder="メールアドレス" required autocomplete="email">
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="電話番号">
+                            <input type="tel" name="phone" placeholder="電話番号" autocomplete="tel">
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="お問い合わせ内容" rows="5" required></textarea>
+                            <textarea name="message" placeholder="お問い合わせ内容" rows="5" required></textarea>
                         </div>
+                        <input type="hidden" name="_subject" value="ホームページからのお問い合わせ">
                         <button type="submit" class="btn-primary">送信する</button>
                     </form>
                 </div>
@@ -263,7 +386,15 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>尾形社会保険労務士事務所</h3>
-                    <p>AI技術を活用した次世代の社労士サービス</p>
+                    <p>AI活用支援に重点を置いた次世代の社労士サービス</p>
+                </div>
+                <div class="footer-section">
+                    <h4>AI活用支援</h4>
+                    <ul>
+                        <li><a href="#ai-services">AI導入戦略策定</a></li>
+                        <li><a href="#ai-services">AI実装・運用支援</a></li>
+                        <li><a href="#ai-services">AI効果測定・改善</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h4>社労士業務</h4>
@@ -275,16 +406,8 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>AI活用支援</h4>
-                    <ul>
-                        <li><a href="#ai-services">AI導入戦略策定</a></li>
-                        <li><a href="#ai-services">AI実装・運用支援</a></li>
-                        <li><a href="#ai-services">AI効果測定・改善</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
                     <h4>お問い合わせ</h4>
-                    <p>📞 06-6123-4567</p>
+                    <p>📞 03-6824-6886</p>
                     <p>✉️ info@ogata-offices.com</p>
                 </div>
             </div>

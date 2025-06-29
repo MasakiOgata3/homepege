@@ -31,30 +31,45 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission handling
-document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+// Formspree AJAX submission
+const contactForm = document.querySelector('.contact-form form');
+const submitButton = contactForm.querySelector('button[type="submit"]');
+const originalButtonText = submitButton.textContent;
+
+contactForm.addEventListener('submit', async function(e) {
     e.preventDefault();
     
-    // Get form data
+    // Show loading state
+    submitButton.disabled = true;
+    submitButton.textContent = '送信中...';
+    
     const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
     
-    // Simple validation
-    if (!data.company || !data.name || !data.email || !data.message) {
-        alert('必須項目をすべて入力してください。');
-        return;
+    try {
+        const response = await fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            // Success message
+            alert('お問い合わせありがとうございます。\n3営業日以内にご連絡いたします。');
+            this.reset();
+        } else {
+            // Error message
+            alert('送信に失敗しました。\nお手数ですが、もう一度お試しください。');
+        }
+    } catch (error) {
+        // Network error
+        alert('ネットワークエラーが発生しました。\nお手数ですが、もう一度お試しください。');
+    } finally {
+        // Reset button state
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
     }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-        alert('正しいメールアドレスを入力してください。');
-        return;
-    }
-    
-    // Success message (in real implementation, you would send to server)
-    alert('お問い合わせありがとうございます。3営業日以内にご連絡いたします。');
-    this.reset();
 });
 
 // Add active class to navigation based on scroll position

@@ -853,7 +853,7 @@ body {
     
     .about-content {
         grid-template-columns: 1fr;
-        text-align: left;
+        text-align: center;
     }
     
     .about-stats {

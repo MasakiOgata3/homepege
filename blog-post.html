@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記事タイトル | ブログ | 尾形社会保険労務士事務所</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>尾形社会保険労務士事務所</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="index.html#ai-services">AI活用支援</a></li>
+                <li><a href="index.html#sr-services">社労士業務</a></li>
+                <li><a href="index.html#pricing">料金</a></li>
+                <li><a href="index.html#about">事務所概要</a></li>
+                <li><a href="blog.html" class="active">AI活用ブログ</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Container -->
+    <article class="blog-article">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index.html">ホーム</a>
+                <span>&gt;</span>
+                <a href="blog.html">AI活用ブログ</a>
+                <span>&gt;</span>
+                <span id="articleCategory">カテゴリー</span>
+            </nav>
+
+            <!-- Article Header -->
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-date" id="articleDate">2025年6月30日</span>
+                    <span class="article-category" id="articleCategoryBadge">カテゴリー</span>
+                </div>
+                <h1 class="article-title" id="articleTitle">記事タイトル</h1>
+                <div class="article-author">
+                    <span>執筆者：社会保険労務士　尾形雅基</span>
+                </div>
+            </header>
+
+            <!-- Article Content -->
+            <div class="article-content" id="articleContent">
+                <!-- 記事内容はJavaScriptで動的に読み込まれます -->
+            </div>
+
+            <!-- Share Buttons -->
+            <div class="share-section">
+                <h3>この記事をシェア</h3>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn twitter" id="shareTwitter" target="_blank">
+                        <span>X (Twitter)</span>
+                    </a>
+                    <a href="#" class="share-btn facebook" id="shareFacebook" target="_blank">
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="share-btn line" id="shareLine" target="_blank">
+                        <span>LINE</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h2>関連記事</h2>
+                <div class="related-grid" id="relatedArticles">
+                    <!-- 関連記事はJavaScriptで動的に読み込まれます -->
+                </div>
+            </section>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>尾形社会保険労務士事務所</h3>
+                    <p>AI活用支援に重点を置いた次世代の社労士サービス</p>
+                </div>
+                <div class="footer-section">
+                    <h4>AI活用支援</h4>
+                    <ul>
+                        <li><a href="index.html#ai-services">AI導入戦略策定</a></li>
+                        <li><a href="index.html#ai-services">AI実装・運用支援</a></li>
+                        <li><a href="index.html#ai-services">AI効果測定・改善</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>社労士業務</h4>
+                    <ul>
+                        <li><a href="index.html#sr-services">労務相談・指導</a></li>
+                        <li><a href="index.html#sr-services">各種手続き代行</a></li>
+                        <li><a href="index.html#sr-services">助成金申請支援</a></li>
+                        <li><a href="index.html#sr-services">就業規則作成</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>お問い合わせ</h4>
+                    <p>📞 03-6824-6886</p>
+                    <p>✉️ info@ogata-offices.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 尾形社会保険労務士事務所. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>

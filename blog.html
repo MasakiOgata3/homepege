@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI活用ブログ | 尾形社会保険労務士事務所 | 業務効率化・自動化のノウハウ</title>
+    <meta name="description" content="社労士が実践するAI活用術、業務効率化、自動化のノウハウを発信。ChatGPT活用法から最新AIツール情報まで、実体験に基づいた具体的な活用方法をお届けします。">
+    <meta name="keywords" content="AI活用, ChatGPT, 業務効率化, 自動化, AIツール, 社労士, 生産性向上, DX推進">
+    
+    <!-- OGP Meta Tags -->
+    <meta property="og:title" content="ブログ | 尾形社会保険労務士事務所 | AI活用・労務管理の最新情報">
+    <meta property="og:description" content="AI活用、労務管理、法改正、助成金などの最新情報を発信。尾形社会保険労務士事務所の専門知識を活かした実践的なアドバイスをお届けします。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ogata-offices.com/blog.html">
+    <meta property="og:image" content="https://ogata-offices.com/logo.png">
+    <meta property="og:site_name" content="尾形社会保険労務士事務所">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ブログ | 尾形社会保険労務士事務所">
+    <meta name="twitter:description" content="AI活用、労務管理、法改正、助成金などの最新情報を発信">
+    <meta name="twitter:image" content="https://ogata-offices.com/logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ogata-offices.com/blog.html">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "尾形社会保険労務士事務所ブログ",
+        "description": "AI活用、労務管理、法改正、助成金などの最新情報を発信",
+        "url": "https://ogata-offices.com/blog.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "尾形社会保険労務士事務所",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ogata-offices.com/logo.png"
+            }
+        },
+        "author": {
+            "@type": "Person",
+            "name": "尾形雅基"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>尾形社会保険労務士事務所</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="index.html#ai-services">AI活用支援</a></li>
+                <li><a href="index.html#sr-services">社労士業務</a></li>
+                <li><a href="index.html#pricing">料金</a></li>
+                <li><a href="index.html#about">事務所概要</a></li>
+                <li><a href="blog.html" class="active">AI活用ブログ</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <h1>AI活用ブログ</h1>
+            <p>社労士が実践するAI活用術・効率化のノウハウ・最新ツール情報をお届けします</p>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="category-btn active" data-category="all">すべて</button>
+                <button class="category-btn" data-category="tools">おすすめAIツール</button>
+                <button class="category-btn" data-category="workflow">業務効率化</button>
+                <button class="category-btn" data-category="automation">自動化</button>
+                <button class="category-btn" data-category="tips">活用・成功事例</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog List -->
+    <section class="blog-list">
+        <div class="container">
+            <div class="blog-grid" id="blogGrid">
+                <!-- ブログ記事はJavaScriptで動的に読み込まれます -->
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="btn-primary load-more" id="loadMoreBtn">もっと見る</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>尾形社会保険労務士事務所</h3>
+                    <p>AI活用支援に重点を置いた次世代の社労士サービス</p>
+                </div>
+                <div class="footer-section">
+                    <h4>AI活用支援</h4>
+                    <ul>
+                        <li><a href="index.html#ai-services">AI導入戦略策定</a></li>
+                        <li><a href="index.html#ai-services">AI実装・運用支援</a></li>
+                        <li><a href="index.html#ai-services">AI効果測定・改善</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>社労士業務</h4>
+                    <ul>
+                        <li><a href="index.html#sr-services">労務相談・指導</a></li>
+                        <li><a href="index.html#sr-services">各種手続き代行</a></li>
+                        <li><a href="index.html#sr-services">助成金申請支援</a></li>
+                        <li><a href="index.html#sr-services">就業規則作成</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>お問い合わせ</h4>
+                    <p>📞 03-6824-6886</p>
+                    <p>✉️ info@ogata-offices.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 尾形社会保険労務士事務所. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>

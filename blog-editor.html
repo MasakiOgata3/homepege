@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI活用ブログエディター | 尾形社会保険労務士事務所</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .editor-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .input-section, .output-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        h2 {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        textarea {
+            min-height: 200px;
+            resize: vertical;
+        }
+        
+        .editor-toolbar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .toolbar-btn {
+            padding: 5px 15px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .toolbar-btn:hover {
+            background: #0056b3;
+        }
+        
+        #output {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .preview-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        
+        .copy-btn {
+            background: #28a745;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .copy-btn:hover {
+            background: #218838;
+        }
+        
+        .help-text {
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .editor-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI活用ブログエディター</h1>
+        
+        <div class="editor-section">
+            <div class="input-section">
+                <h2>記事情報を入力</h2>
+                
+                <div class="form-group">
+                    <label for="postId">記事ID（既存記事の最大ID + 1）</label>
+                    <input type="number" id="postId" value="6" min="1">
+                    <div class="help-text">※現在の最大IDは5です</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="postTitle">記事タイトル</label>
+                    <input type="text" id="postTitle" placeholder="例：ChatGPTを活用した労務管理の効率化">
+                </div>
+                
+                <div class="form-group">
+                    <label for="postExcerpt">記事の要約（2-3行）</label>
+                    <textarea id="postExcerpt" rows="3" placeholder="例：AI技術の進化により、労務管理業務も大きく変革しています。本記事では..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="postCategory">カテゴリー</label>
+                    <select id="postCategory">
+                        <option value="tools">おすすめAIツール</option>
+                        <option value="workflow">業務効率化</option>
+                        <option value="automation">自動化</option>
+                        <option value="tips">活用・成功事例</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="postDate">投稿日</label>
+                    <input type="date" id="postDate" value="">
+                </div>
+                
+                <div class="form-group">
+                    <label for="postContent">記事本文</label>
+                    <div class="editor-toolbar">
+                        <button class="toolbar-btn" onclick="insertTag('h2')">大見出し</button>
+                        <button class="toolbar-btn" onclick="insertTag('h3')">小見出し</button>
+                        <button class="toolbar-btn" onclick="insertTag('p')">段落</button>
+                        <button class="toolbar-btn" onclick="insertList('ul')">箇条書き</button>
+                        <button class="toolbar-btn" onclick="insertList('ol')">番号リスト</button>
+                        <button class="toolbar-btn" onclick="insertTag('blockquote')">引用</button>
+                    </div>
+                    <textarea id="postContent" rows="15" placeholder="記事の本文をここに入力..."></textarea>
+                </div>
+            </div>
+            
+            <div class="output-section">
+                <h2>生成されたコード</h2>
+                <div id="output"></div>
+                <button class="copy-btn" onclick="copyCode()">コードをコピー</button>
+                <div class="help-text">※このコードをblog.jsのblogPosts配列に追加してください</div>
+            </div>
+        </div>
+        
+        <div class="preview-section">
+            <h2>プレビュー</h2>
+            <div id="preview"></div>
+        </div>
+    </div>
+    
+    <script>
+        // 今日の日付を設定
+        document.getElementById('postDate').valueAsDate = new Date();
+        
+        // カテゴリーラベルのマッピング
+        const categoryLabels = {
+            'tools': 'おすすめAIツール',
+            'workflow': '業務効率化',
+            'automation': '自動化',
+            'tips': '活用・成功事例'
+        };
+        
+        // 入力フィールドの変更を監視
+        document.querySelectorAll('input, textarea, select').forEach(input => {
+            input.addEventListener('input', generateCode);
+        });
+        
+        // HTMLタグを挿入
+        function insertTag(tag) {
+            const textarea = document.getElementById('postContent');
+            const start = textarea.selectionStart;
+            const end = textarea.selectionEnd;
+            const selectedText = textarea.value.substring(start, end);
+            const replacement = `<${tag}>${selectedText || 'テキスト'}</${tag}>\n`;
+            
+            textarea.value = textarea.value.substring(0, start) + replacement + textarea.value.substring(end);
+            textarea.focus();
+            generateCode();
+        }
+        
+        // リストを挿入
+        function insertList(type) {
+            const textarea = document.getElementById('postContent');
+            const listItems = type === 'ul' 
+                ? '<li>項目1</li>\n    <li>項目2</li>\n    <li>項目3</li>'
+                : '<li>手順1</li>\n    <li>手順2</li>\n    <li>手順3</li>';
+            const replacement = `<${type}>\n    ${listItems}\n</${type}>\n`;
+            
+            const start = textarea.selectionStart;
+            textarea.value = textarea.value.substring(0, start) + replacement + textarea.value.substring(start);
+            textarea.focus();
+            generateCode();
+        }
+        
+        // コードを生成
+        function generateCode() {
+            const id = document.getElementById('postId').value;
+            const title = document.getElementById('postTitle').value;
+            const excerpt = document.getElementById('postExcerpt').value;
+            const category = document.getElementById('postCategory').value;
+            const categoryLabel = categoryLabels[category];
+            const date = new Date(document.getElementById('postDate').value);
+            const dateStr = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+            const content = document.getElementById('postContent').value;
+            
+            // コンテンツの整形
+            const formattedContent = content
+                .split('\n')
+                .filter(line => line.trim())
+                .map(line => '        ' + line.trim())
+                .join('\n');
+            
+            const code = `{
+    id: ${id},
+    title: "${title}",
+    excerpt: "${excerpt}",
+    category: "${category}",
+    categoryLabel: "${categoryLabel}",
+    date: "${dateStr}",
+    image: "https://placehold.co/600x400/e3f2fd/1976d2?text=${encodeURIComponent(categoryLabel)}",
+    content: \`
+${formattedContent}
+    \`
+},`;
+            
+            document.getElementById('output').textContent = code;
+            
+            // プレビューを更新
+            updatePreview(title, excerpt, categoryLabel, dateStr, content);
+        }
+        
+        // プレビューを更新
+        function updatePreview(title, excerpt, categoryLabel, date, content) {
+            const preview = document.getElementById('preview');
+            preview.innerHTML = `
+                <div style="border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <div style="color: #666; font-size: 14px; margin-bottom: 10px;">
+                        <span>${date}</span> | <span style="background: #007bff; color: white; padding: 2px 10px; border-radius: 15px;">${categoryLabel}</span>
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px;">${title || '記事タイトル'}</h3>
+                    <p style="color: #666; line-height: 1.6;">${excerpt || '記事の要約がここに表示されます'}</p>
+                </div>
+                <div style="line-height: 1.8;">
+                    ${content || '<p>記事本文がここに表示されます</p>'}
+                </div>
+            `;
+        }
+        
+        // コードをコピー
+        function copyCode() {
+            const code = document.getElementById('output').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'コピーしました！';
+                btn.style.background = '#28a745';
+                setTimeout(() => {
+                    btn.textContent = 'コードをコピー';
+                }, 2000);
+            });
+        }
+        
+        // 初期表示
+        generateCode();
+    </script>
+</body>
+</html>

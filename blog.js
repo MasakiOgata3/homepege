@@ -97,7 +97,7 @@ const blogPosts = [
             </ul>
             
             <div style="text-align: center; margin: 30px 0;">
-                <img src="./generated-images/ai-collaboration.png" alt="AIとの協働" style="width: 60%; max-width: 500px; height: auto;">
+                <img src="./generated-images/ai-collaboration.png" alt="AIとの協働" style="width: 90%; max-width: 600px; height: auto;">
             </div>
             
             <h2>完成した時の気持ち</h2>

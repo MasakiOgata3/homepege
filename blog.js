@@ -143,7 +143,7 @@ const blogPosts = [
         excerpt: "AIエージェント・ジェンスパークの実力を社労士が検証。スライド作成から専門的な調べものまで、実際の使用例とともに詳しく解説します。",
         category: "tools",
         categoryLabel: "おすすめAIツール",
-        date: "2025年6月30日",
+        date: "2025年6月28日",
         image: "./generated-images/ai-collaboration.png",
         content: `
             <h2>ジェンスパークとは？</h2>

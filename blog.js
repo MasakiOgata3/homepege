@@ -346,7 +346,7 @@ if (isArticlePage) {
         document.querySelector('meta[property="og:description"]').setAttribute('content', post.excerpt);
         document.querySelector('meta[property="og:url"]').setAttribute('content', currentUrl);
         document.querySelector('meta[property="og:image"]').setAttribute('content', `https://ogata-offices.com/${post.image}`);
-        document.querySelector('meta[name="twitter:title"]').setAttribute('content', post.title);
+        document.querySelector('meta[name="twitter:title"]').setAttribute('content', `${post.title} | 尾形社会保険労務士事務所`);
         document.querySelector('meta[name="twitter:description"]').setAttribute('content', post.excerpt);
         document.querySelector('meta[name="twitter:image"]').setAttribute('content', `https://ogata-offices.com/${post.image}`);
         document.querySelector('link[rel="canonical"]').setAttribute('href', currentUrl);

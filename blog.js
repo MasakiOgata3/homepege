@@ -370,7 +370,7 @@ if (isArticlePage) {
                 <h3 style="color: #fff; margin-bottom: 15px;">AI活用で業務効率化を実現しませんか？</h3>
                 <p style="margin-bottom: 20px; line-height: 1.6;">
                     労務管理業務の効率化から、AIツールの導入支援まで。<br>
-                    あなたの業務課題をAIで解決します。
+                    御社の業務課題を当事務所が解決します。
                 </p>
                 <a href="index.html#contact" style="background: #fff; color: #4a5568; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block; border: 2px solid #fff;">無料相談はこちら</a>
             </div>

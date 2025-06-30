@@ -26,7 +26,7 @@ const blogPosts = [
             <p style="font-size: 0.9em; color: #666; font-style: italic;">※バイブコーディング：AIを活用した新しいプログラミング手法。「バイブ（雰囲気・フィーリング）」で全体的な目的や機能をAIに伝え、細かい技術的詳細はAIに任せるアプローチ。2025年に注目されている。</p>
             
             <p><strong>参考動画：</strong></p>
-            <div style="position: relative; width: 50%; height: 0; padding-bottom: 28.125%; margin: 15px auto;">
+            <div style="position: relative; width: 90%; height: 0; padding-bottom: 50.625%; margin: 15px auto;">
                 <iframe 
                     src="https://www.youtube.com/embed/TNet-59wnH0" 
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"

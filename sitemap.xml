@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- メインページ -->
+    <url>
+        <loc>https://ogata-offices.com/</loc>
+        <lastmod>2025-06-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- ブログ一覧ページ -->
+    <url>
+        <loc>https://ogata-offices.com/blog.html</loc>
+        <lastmod>2025-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- ブログ記事1：Claude Code体験談 -->
+    <url>
+        <loc>https://ogata-offices.com/blog-post.html?id=1</loc>
+        <lastmod>2025-06-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <news:news>
+            <news:publication>
+                <news:name>尾形社会保険労務士事務所</news:name>
+                <news:language>ja</news:language>
+            </news:publication>
+            <news:publication_date>2025-06-30</news:publication_date>
+            <news:title>プログラミング初心者がClaude Codeでホームページ制作に成功した体験談（このホームページを作った時の実話です）</news:title>
+            <news:keywords>Claude Code, AI活用, ホームページ制作, プログラミング初心者, 体験談, 社労士, AI支援</news:keywords>
+        </news:news>
+        <image:image>
+            <image:loc>https://ogata-offices.com/generated-images/male-success-achievement.png</image:loc>
+            <image:title>Claude Codeでのホームページ制作成功体験</image:title>
+            <image:caption>プログラミング初心者がAIの力でホームページ制作に成功した実体験</image:caption>
+        </image:image>
+    </url>
+
+    <!-- ブログ記事6：Genspark記事 -->
+    <url>
+        <loc>https://ogata-offices.com/blog-post.html?id=6</loc>
+        <lastmod>2025-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <news:news>
+            <news:publication>
+                <news:name>尾形社会保険労務士事務所</news:name>
+                <news:language>ja</news:language>
+            </news:publication>
+            <news:publication_date>2025-06-28</news:publication_date>
+            <news:title>綺麗なスライドも調べものも！ジェンスパーク（Genspark）が業務効率化におすすめな理由</news:title>
+            <news:keywords>Genspark, ジェンスパーク, AIツール, スライド作成, 業務効率化, 社労士, 検索エンジン</news:keywords>
+        </news:news>
+        <image:image>
+            <image:loc>https://ogata-offices.com/generated-images/ai-collaboration.png</image:loc>
+            <image:title>ジェンスパークによる業務効率化</image:title>
+            <image:caption>AIエージェント・ジェンスパークを活用したスライド作成と調査業務の効率化</image:caption>
+        </image:image>
+    </url>
+
+</urlset>

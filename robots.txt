@@ -1,0 +1,42 @@
+User-agent: *
+Allow: /
+
+# サイトマップの場所
+Sitemap: https://ogata-offices.com/sitemap.xml
+
+# クロール頻度の推奨設定
+Crawl-delay: 1
+
+# 特定のディレクトリを許可
+Allow: /blog/
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+
+# 一般的な除外設定（該当しない場合でも予防的に設置）
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.log
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+
+# 検索エンジン向けの追加情報
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Yahoo
+User-agent: Slurp
+Allow: /

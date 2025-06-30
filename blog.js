@@ -339,6 +339,18 @@ if (isArticlePage) {
         document.getElementById('articleCategory').textContent = post.categoryLabel;
         document.getElementById('articleCategoryBadge').textContent = post.categoryLabel;
         
+        // SEOメタタグを動的に設定
+        const currentUrl = window.location.href;
+        document.querySelector('meta[name="description"]').setAttribute('content', post.excerpt);
+        document.querySelector('meta[property="og:title"]').setAttribute('content', `${post.title} | 尾形社会保険労務士事務所`);
+        document.querySelector('meta[property="og:description"]').setAttribute('content', post.excerpt);
+        document.querySelector('meta[property="og:url"]').setAttribute('content', currentUrl);
+        document.querySelector('meta[property="og:image"]').setAttribute('content', `https://ogata-offices.com/${post.image}`);
+        document.querySelector('meta[name="twitter:title"]').setAttribute('content', post.title);
+        document.querySelector('meta[name="twitter:description"]').setAttribute('content', post.excerpt);
+        document.querySelector('meta[name="twitter:image"]').setAttribute('content', `https://ogata-offices.com/${post.image}`);
+        document.querySelector('link[rel="canonical"]').setAttribute('href', currentUrl);
+        
         // 記事画像をヘッダーに追加
         const articleHeader = document.querySelector('.article-header');
         const heroImage = document.createElement('div');

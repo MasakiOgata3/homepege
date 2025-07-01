@@ -289,7 +289,7 @@ if (!isArticlePage) {
         const postsToShow = filteredPosts.slice(0, displayedPosts);
         
         blogGrid.innerHTML = postsToShow.map(post => `
-            <article class="blog-card" onclick="window.location.href='blog-post.html?id=${post.id}'">
+            <article class="blog-card" onclick="window.location.href='blog/article-${post.id}.html'">
                 <img src="${getImagePath(post.image)}" alt="${post.title}" class="blog-card-image" 
                      onerror="console.log('画像読み込みエラー:', this.src); this.style.display='none';">
                 <div class="blog-card-content">
@@ -299,7 +299,7 @@ if (!isArticlePage) {
                     </div>
                     <h3 class="blog-card-title">${post.title}</h3>
                     <p class="blog-card-excerpt">${post.excerpt}</p>
-                    <a href="blog-post.html?id=${post.id}" class="blog-card-link">
+                    <a href="blog/article-${post.id}.html" class="blog-card-link">
                         続きを読む →
                     </a>
                 </div>
@@ -395,7 +395,7 @@ if (isArticlePage) {
         
         const relatedGrid = document.getElementById('relatedArticles');
         relatedGrid.innerHTML = relatedPosts.map(p => `
-            <article class="blog-card" onclick="window.location.href='blog-post.html?id=${p.id}'>"
+            <article class="blog-card" onclick="window.location.href='blog/article-${p.id}.html'>"
                 <img src="${getImagePath(p.image)}" alt="${p.title}" class="blog-card-image" 
                      onerror="console.log('関連記事画像読み込みエラー:', this.src); this.style.display='none';">
                 <div class="blog-card-content">
@@ -404,7 +404,7 @@ if (isArticlePage) {
                         <span class="blog-card-category">${p.categoryLabel}</span>
                     </div>
                     <h3 class="blog-card-title">${p.title}</h3>
-                    <a href="blog-post.html?id=${p.id}" class="blog-card-link">
+                    <a href="blog/article-${p.id}.html" class="blog-card-link">
                         続きを読む →
                     </a>
                 </div>

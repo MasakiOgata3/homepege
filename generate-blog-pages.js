@@ -478,7 +478,7 @@ function generateBlogHTML(post) {
         
         relatedGrid.innerHTML = relatedPosts.map(p => \`
             <article class="blog-card" onclick="window.location.href='article-\${p.id}.html'">
-                <img src="${adjustedImage}" alt="\${p.title}" class="blog-card-image">
+                <img src="\${p.image.replace('./generated-images/', '../generated-images/')}" alt="\${p.title}" class="blog-card-image">
                 <div class="blog-card-content">
                     <div class="blog-card-meta">
                         <span class="blog-card-date">\${p.date}</span>

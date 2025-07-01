@@ -240,16 +240,12 @@ const blogPosts = [
                 <li>顧客情報などの機密情報は入力しない</li>
             </ul>
             
-            <h2>まとめ：業務効率化の強力なパートナー</h2>
-            <p>ジェンスパークは、単なる検索ツールを超えた、業務効率化の強力なパートナーです。特にスライド作成機能と専門的な調べものでの精度の高さは、日々の業務で大きな助けになります。</p>
+            <h2>まとめ</h2>
+            <p>ジェンスパークは、単なる検索ツールの枠を超えた、本当に優秀なAIアシスタントです。スライド作成から専門的な調べものまで、幅広い業務で頼りになるパートナーとなってくれます。</p>
             
-            <p>AI活用というと難しく感じるかもしれませんが、ジェンスパークは直感的に使えるツールです。まずは無料で試してみて、その実力を体感してみてください。</p>
+            <p>特に情報の正確性と包括性は、他のツールと比べても群を抜いています。社労士として複雑な制度や法律について調べることが多い私にとって、これほど信頼できるツールは他にありません。</p>
             
-            <p>社労士として、このようなAIツールを活用することで、より付加価値の高いサービスを提供できるようになります。効率化で生まれた時間を、クライアントとのコミュニケーションや専門性を活かした業務に充てることができるのです。</p>
-            
-            <p style="text-align: center; margin: 30px 0;">
-                <a href="https://www.genspark.ai/" target="_blank" style="display: inline-block; padding: 12px 30px; background: #007bff; color: white; text-decoration: none; border-radius: 5px;">→ ジェンスパークを試してみる</a>
-            </p>
+            <p>まだ使ったことがない方は、ぜひ一度試してみてください。きっとその実力に驚かれると思います。業務効率化を真剣に考えている方には、心からおすすめできるAIツールです。</p>
         `
     }
 ];
@@ -336,8 +332,8 @@ function generateBlogHTML(post) {
                 <li><a href="../index.html#sr-services">社労士業務</a></li>
                 <li><a href="../index.html#pricing">料金</a></li>
                 <li><a href="../index.html#about">事務所概要</a></li>
-                <li><a href="../blog.html" class="active">ブログ</a></li>
                 <li><a href="../index.html#contact">お問い合わせ</a></li>
+                <li><a href="../blog.html" class="active">AI活用ブログ</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -386,10 +382,24 @@ function generateBlogHTML(post) {
                 </div>
             </header>
 
+            <!-- Article Hero Image -->
+            <div class="article-hero-image">
+                <img src="${adjustedImage}" alt="${post.title}" />
+            </div>
+
             <!-- Article Content -->
             <div class="article-content">
                 ${post.content}
             </div>
+
+            <!-- CTA Section -->
+            <section class="article-cta">
+                <div class="cta-box">
+                    <h3>AI活用で業務効率化を実現しませんか？</h3>
+                    <p>労務管理業務の効率化から、AIツールの導入支援まで。<br>御社の業務課題を当事務所が解決します。</p>
+                    <a href="../index.html#contact" class="btn-primary">無料相談はこちら</a>
+                </div>
+            </section>
 
             <!-- Share Buttons -->
             <div class="share-section">
@@ -412,15 +422,6 @@ function generateBlogHTML(post) {
                 <h2>関連記事</h2>
                 <div class="related-grid" id="relatedArticles">
                     <!-- 関連記事は動的に生成 -->
-                </div>
-            </section>
-
-            <!-- CTA Section -->
-            <section class="article-cta">
-                <div class="cta-box">
-                    <h3>AI活用で業務効率化を実現しませんか？</h3>
-                    <p>尾形社会保険労務士事務所では、労務管理とAI活用の両面から企業の成長をサポートします。</p>
-                    <a href="../index.html#contact" class="btn-primary">無料相談を申し込む</a>
                 </div>
             </section>
         </div>

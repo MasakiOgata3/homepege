@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像テスト</title>
+    <style>
+        img { width: 300px; margin: 20px; border: 1px solid #ccc; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>画像表示テスト</h1>
+    
+    <h2>生成された画像</h2>
+    <div>
+        <p>ChatGPT労務管理:</p>
+        <img src="generated-images/chatgpt-labor-management.png" alt="ChatGPT労務管理" 
+             onload="console.log('✅ 画像読み込み成功:', this.src)" 
+             onerror="console.log('❌ 画像読み込み失敗:', this.src); this.style.border='2px solid red';">
+    </div>
+    
+    <div>
+        <p>労働法改正:</p>
+        <img src="generated-images/labor-law-reform-2025.png" alt="労働法改正" 
+             onload="console.log('✅ 画像読み込み成功:', this.src)" 
+             onerror="console.log('❌ 画像読み込み失敗:', this.src); this.style.border='2px solid red';">
+    </div>
+    
+    <div>
+        <p>中小企業AIツール:</p>
+        <img src="generated-images/sme-ai-tools.png" alt="中小企業AIツール" 
+             onload="console.log('✅ 画像読み込み成功:', this.src)" 
+             onerror="console.log('❌ 画像読み込み失敗:', this.src); this.style.border='2px solid red';">
+    </div>
+    
+    <div>
+        <p>助成金ガイド:</p>
+        <img src="generated-images/subsidies-grants-guide.png" alt="助成金ガイド" 
+             onload="console.log('✅ 画像読み込み成功:', this.src)" 
+             onerror="console.log('❌ 画像読み込み失敗:', this.src); this.style.border='2px solid red';">
+    </div>
+    
+    <div>
+        <p>テレワーク労務管理:</p>
+        <img src="generated-images/telework-labor-management.png" alt="テレワーク労務管理" 
+             onload="console.log('✅ 画像読み込み成功:', this.src)" 
+             onerror="console.log('❌ 画像読み込み失敗:', this.src); this.style.border='2px solid red';">
+    </div>
+    
+    <script>
+        console.log('現在のURL:', window.location.href);
+        console.log('ベースURL:', window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/'));
+    </script>
+</body>
+</html>

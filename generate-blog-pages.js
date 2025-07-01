@@ -1,9 +1,125 @@
-// ブログ記事の個別HTMLページを生成するスクリプト
+// ブログ記事の個別HTMLページを生成するスクリプト（Markdownマスター方式）
 const fs = require('fs');
 const path = require('path');
+const { marked } = require('marked');
 
-// blog.jsから記事データをコピー
-const blogPosts = [
+// Markdownファイルから記事データを読み込む関数
+function parseMarkdownFile(filePath) {
+    const content = fs.readFileSync(filePath, 'utf8');
+    const lines = content.split('\n');
+    
+    // メタデータを抽出
+    const meta = {};
+    let contentStart = 0;
+    
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (line.startsWith('# ')) {
+            meta.title = line.substring(2);
+        }
+        if (line.startsWith('**投稿日**:')) {
+            meta.date = line.split(': ')[1].trim();
+            // 日付をISO形式に変換
+            const dateMatch = meta.date.match(/(\d{4})年(\d{1,2})月(\d{1,2})日/);
+            if (dateMatch) {
+                const year = dateMatch[1];
+                const month = dateMatch[2].padStart(2, '0');
+                const day = dateMatch[3].padStart(2, '0');
+                meta.dateISO = `${year}-${month}-${day}`;
+            }
+        }
+        if (line.startsWith('**カテゴリー**:')) {
+            const category = line.split(': ')[1].trim();
+            meta.category = category === '活用・成功事例' ? 'tips' : 'tools';
+            meta.categoryLabel = category;
+        }
+        if (line.startsWith('**記事ID**:')) {
+            meta.id = parseInt(line.split(': ')[1].trim());
+        }
+        if (line.startsWith('## ')) {
+            contentStart = i;
+            break;
+        }
+    }
+    
+    // 記事内容を抽出（メタ情報以降）
+    const markdownContent = lines.slice(contentStart).join('\n');
+    
+    // Markdownの最初の段落を抜粋として使用
+    const firstParagraph = markdownContent.split('\n\n').find(p => p.trim() && !p.startsWith('#'));
+    meta.excerpt = firstParagraph ? firstParagraph.replace(/[*#>-]/g, '').substring(0, 200) + '...' : '';
+    
+    // 画像パスを設定（記事IDに基づく）
+    if (meta.id === 1) {
+        meta.image = './generated-images/male-success-achievement.png';
+    } else if (meta.id === 6) {
+        meta.image = './generated-images/ai-collaboration.png';
+    }
+    
+    // MarkdownをHTMLに変換
+    meta.content = convertMarkdownToHTML(markdownContent);
+    
+    return meta;
+}
+
+// MarkdownをHTMLに変換する関数
+function convertMarkdownToHTML(markdown) {
+    // 基本的なmarkdown変換
+    let html = marked(markdown);
+    
+    // 後処理でスタイルを適用
+    
+    // ※で始まる段落をスタイリング
+    html = html.replace(/<p>(>?\s*※.*?)<\/p>/g, '<p style="font-size: 0.9em; color: #666; font-style: italic;">$1</p>');
+    
+    // 引用ブロックのスタイリング（プロンプト用）
+    html = html.replace(/<blockquote>\s*<p>\s*<strong>(実際に使ったプロンプト|最初のリクエスト|効果的だった質問例|質問例)[^<]*<\/strong>([\s\S]*?)<\/blockquote>/g, 
+        '<div style="background: #fff3e0; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;"><p><strong>$1:</strong>$2</div>');
+    
+    // 画像の処理
+    html = html.replace(/<img src="([^"]*(?:success-achievement|ai-collaboration)[^"]*)" alt="([^"]*)"[^>]*>/g, 
+        '<div style="text-align: center; margin: 30px 0;"><img src="$1" alt="$2" style="width: 90%; max-width: 600px; height: auto;"></div>');
+    
+    // YouTube埋め込みリンクの処理
+    html = html.replace(/<a href="(https:\/\/www\.youtube\.com\/embed\/[^"]*)"[^>]*>([^<]*)<\/a>/g,
+        '<div style="position: relative; width: 90%; height: 0; padding-bottom: 50.625%; margin: 15px auto;"><iframe src="$1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe></div><p style="text-align: center; font-size: 0.9em; color: #666;">$2</p>');
+    
+    // Genspark リンクの処理
+    html = html.replace(/<a href="([^"]*genspark\.ai[^"]*)"[^>]*>([^<]*)<\/a>/g,
+        '<p style="text-align: center; margin: 20px 0;"><a href="$1" target="_blank" style="color: #007bff; text-decoration: underline;">→ $2</a></p>');
+    
+    return html;
+}
+
+// Markdownファイルから記事データを読み込む
+const articleDir = path.join(__dirname, 'blog', 'Article');
+const blogPosts = [];
+
+// 各記事フォルダを読み込む
+const articleFolders = fs.readdirSync(articleDir).filter(folder => {
+    return fs.statSync(path.join(articleDir, folder)).isDirectory();
+});
+
+articleFolders.forEach(folder => {
+    const markdownPath = path.join(articleDir, folder, `${folder}.md`);
+    if (fs.existsSync(markdownPath)) {
+        try {
+            const postData = parseMarkdownFile(markdownPath);
+            blogPosts.push(postData);
+            console.log(`Loaded article: ${postData.title}`);
+        } catch (error) {
+            console.error(`Error loading ${markdownPath}:`, error);
+        }
+    }
+});
+
+// IDでソート
+blogPosts.sort((a, b) => a.id - b.id);
+
+console.log(`Loaded ${blogPosts.length} articles from Markdown files`);
+
+// 以下は既存のblogPosts配列（削除予定）
+const oldBlogPosts = [
     {
         id: 1,
         title: "プログラミング初心者がClaude Codeでホームページ制作に成功した体験談（このホームページを作った時の実話です）",
@@ -253,12 +369,12 @@ const blogPosts = [
             <p>まだ使ったことがない方は、ぜひ一度試してみてください。きっとその実力に驚かれると思います。業務効率化を真剣に考えている方には、心からおすすめできるAIツールです。</p>
         `
     }
-];
+]; // この配列は削除予定 - Markdownファイルから自動読み込みに移行
 
 // HTMLテンプレート
 function generateBlogHTML(post) {
     // 画像パスの調整（blogフォルダから見た相対パス）
-    const adjustedImage = post.image.replace('./generated-images/', '../generated-images/');
+    const adjustedImage = post.image ? post.image.replace('./generated-images/', '../generated-images/') : '../generated-images/default.png';
     
     const structuredData = {
         "@context": "https://schema.org",

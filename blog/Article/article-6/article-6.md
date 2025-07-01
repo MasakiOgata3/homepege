@@ -82,7 +82,7 @@
 
 ## なぜジェンスパークがおすすめなのか
 
-![ジェンスパークで業務効率化に成功](../../generated-images/success-achievement.png)
+![ジェンスパークで業務効率化に成功](../generated-images/success-achievement.png)
 
 ### 1. 圧倒的な回答精度
 

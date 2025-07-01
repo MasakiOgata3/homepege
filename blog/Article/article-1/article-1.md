@@ -75,7 +75,7 @@ Claude Codeが作ってくれたホームページは、思っていたよりも
 - カテゴリー機能
 - 記事エディターツール
 
-![AIとの協働](../../generated-images/ai-collaboration.png)
+![AIとの協働](../generated-images/ai-collaboration.png)
 
 ## 完成した時の気持ち
 

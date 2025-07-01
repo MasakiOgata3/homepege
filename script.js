@@ -36,19 +36,68 @@ const contactForm = document.querySelector('.contact-form form');
 const submitButton = contactForm.querySelector('button[type="submit"]');
 const originalButtonText = submitButton.textContent;
 
+// モーダル要素
+const modal = document.getElementById('confirmModal');
+const modalClose = modal.querySelector('.modal-close');
+const confirmCancel = document.getElementById('confirmCancel');
+const confirmSubmit = document.getElementById('confirmSubmit');
+
+// フォームデータを保存する変数
+let pendingFormData = null;
+
 contactForm.addEventListener('submit', async function(e) {
     e.preventDefault();
+    
+    // バリデーションチェック
+    const company = this.querySelector('input[name="company"]').value.trim();
+    const name = this.querySelector('input[name="name"]').value.trim();
+    const email = this.querySelector('input[name="email"]').value.trim();
+    const phone = this.querySelector('input[name="phone"]').value.trim();
+    const message = this.querySelector('textarea[name="message"]').value.trim();
+    
+    // 必須項目のチェック
+    const errors = [];
+    if (!company) errors.push('会社名');
+    if (!name) errors.push('お名前');
+    if (!email) errors.push('メールアドレス');
+    if (!phone) errors.push('電話番号');
+    if (!message) errors.push('お問い合わせ内容');
+    
+    if (errors.length > 0) {
+        alert(`以下の必須項目を入力してください：\n・${errors.join('\n・')}`);
+        return;
+    }
+    
+    // モーダルに内容を表示
+    document.getElementById('confirmCompany').textContent = company;
+    document.getElementById('confirmName').textContent = name;
+    document.getElementById('confirmEmail').textContent = email;
+    document.getElementById('confirmPhone').textContent = phone;
+    document.getElementById('confirmMessage').textContent = message;
+    
+    // フォームデータを保存
+    pendingFormData = new FormData(this);
+    
+    // モーダルを表示
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    
+});
+
+// モーダルの確認ボタンクリック時
+confirmSubmit.addEventListener('click', async function() {
+    // モーダルを閉じる
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
     
     // Show loading state
     submitButton.disabled = true;
     submitButton.textContent = '送信中...';
     
-    const formData = new FormData(this);
-    
     try {
-        const response = await fetch(this.action, {
+        const response = await fetch(contactForm.action, {
             method: 'POST',
-            body: formData,
+            body: pendingFormData,
             headers: {
                 'Accept': 'application/json'
             }
@@ -57,7 +106,7 @@ contactForm.addEventListener('submit', async function(e) {
         if (response.ok) {
             // Success message
             alert('お問い合わせありがとうございます。\n3営業日以内にご連絡いたします。');
-            this.reset();
+            contactForm.reset();
         } else {
             // Error message
             alert('送信に失敗しました。\nお手数ですが、もう一度お試しください。');
@@ -69,6 +118,30 @@ contactForm.addEventListener('submit', async function(e) {
         // Reset button state
         submitButton.disabled = false;
         submitButton.textContent = originalButtonText;
+        pendingFormData = null;
+    }
+});
+
+// モーダルの閉じるボタン
+modalClose.addEventListener('click', function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+    pendingFormData = null;
+});
+
+// キャンセルボタン
+confirmCancel.addEventListener('click', function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+    pendingFormData = null;
+});
+
+// モーダル外クリックで閉じる
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        pendingFormData = null;
     }
 });
 

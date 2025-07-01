@@ -270,7 +270,7 @@ function generateBlogHTML(post) {
         "dateModified": post.dateISO,
         "author": {
             "@type": "Person",
-            "name": "社会保険労務士 尾形雅基",
+            "name": "社会保険労務士　尾形雅基",
             "url": "https://ogata-offices.com"
         },
         "publisher": {
@@ -303,7 +303,7 @@ function generateBlogHTML(post) {
     <meta property="og:image" content="https://ogata-offices.com${adjustedImage.replace('..', '')}">
     <meta property="og:site_name" content="尾形社会保険労務士事務所">
     <meta property="article:published_time" content="${post.dateISO}">
-    <meta property="article:author" content="社会保険労務士 尾形雅基">
+    <meta property="article:author" content="社会保険労務士　尾形雅基">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -383,7 +383,7 @@ function generateBlogHTML(post) {
                 </div>
                 <h1 class="article-title">${post.title}</h1>
                 <div class="article-author">
-                    <span>執筆者: 社会保険労務士 尾形雅基</span>
+                    <span>執筆者: 社会保険労務士　尾形雅基</span>
                 </div>
             </header>
 

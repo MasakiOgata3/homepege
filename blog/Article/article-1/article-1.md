@@ -75,9 +75,9 @@ Claude Codeが作ってくれたホームページは、思っていたよりも
 - カテゴリー機能
 - 記事エディターツール
 
-![AIとの協働](../generated-images/ai-collaboration.png)
-
 ## 完成した時の気持ち
+
+![AIとの協働](../generated-images/ai-collaboration.png)
 
 すべてが完成した時、正直に言うと「すごいな」って本当に思いました。でも、自分がすごいんじゃなくて、このAIの技術力がすごいんだなと。
 

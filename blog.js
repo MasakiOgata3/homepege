@@ -45,7 +45,7 @@ const blogPosts = [
 
             <h2>トップダウンでのAI導入が成功の鍵</h2>
             
-            <img src="./generated-images/ai-business-transformation-wide.png" alt="AIによるビジネス変革のイメージ" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 20px auto;">
+            <div style="text-align: center; margin: 30px 0;"><img src="./generated-images/ai-business-transformation-wide.png" alt="AIによるビジネス変革のイメージ" style="width: 90%; max-width: 600px; height: auto;"></div>
             
             <h3>経営者自身が価値を実感する必要性</h3>
             <p>「社員に任せればいい」では、本当の変革は起きません。</p>

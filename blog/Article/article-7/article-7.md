@@ -30,7 +30,7 @@
 
 ## トップダウンでのAI導入が成功の鍵
 
-![AIによるビジネス変革のイメージ](../generated-images/ai-business-transformation-wide.png)
+<div style="text-align: center; margin: 30px 0;"><img src="../generated-images/ai-business-transformation-wide.png" alt="AIによるビジネス変革のイメージ" style="width: 90%; max-width: 600px; height: auto;"></div>
 
 ### 経営者自身が価値を実感する必要性
 

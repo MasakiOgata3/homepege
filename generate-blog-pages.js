@@ -30,7 +30,13 @@ function parseMarkdownFile(filePath) {
         }
         if (line.startsWith('**カテゴリー**:')) {
             const category = line.split(': ')[1].trim();
-            meta.category = category === '活用・成功事例' ? 'tips' : 'tools';
+            if (category === '活用・成功事例') {
+                meta.category = 'tips';
+            } else if (category === 'AIと経営') {
+                meta.category = 'ai-business';
+            } else {
+                meta.category = 'tools';
+            }
             meta.categoryLabel = category;
         }
         if (line.startsWith('**記事ID**:')) {
@@ -54,6 +60,8 @@ function parseMarkdownFile(filePath) {
         meta.image = './generated-images/male-success-achievement.png';
     } else if (meta.id === 6) {
         meta.image = './generated-images/ai-collaboration.png';
+    } else if (meta.id === 7) {
+        meta.image = './generated-images/male-executive-ai-productivity-wide.png';
     }
     
     // MarkdownをHTMLに変換

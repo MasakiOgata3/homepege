@@ -348,7 +348,15 @@ if (!isArticlePage) {
             ? blogPosts 
             : blogPosts.filter(post => post.category === currentCategory);
         
-        const postsToShow = filteredPosts.slice(0, displayedPosts);
+        // 記事を日付順に降順ソート（新しい記事が上に）
+        const sortedPosts = filteredPosts.sort((a, b) => {
+            // 日付文字列を Date オブジェクトに変換して比較
+            const dateA = new Date(a.date.replace(/年|月/g, '/').replace(/日/g, ''));
+            const dateB = new Date(b.date.replace(/年|月/g, '/').replace(/日/g, ''));
+            return dateB - dateA; // 降順（新しい記事が上）
+        });
+        
+        const postsToShow = sortedPosts.slice(0, displayedPosts);
         
         blogGrid.innerHTML = postsToShow.map(post => `
             <article class="blog-card" onclick="window.location.href='blog/article-${post.id}.html'">
@@ -370,7 +378,7 @@ if (!isArticlePage) {
 
         // もっと見るボタンの表示/非表示
         const loadMoreBtn = document.getElementById('loadMoreBtn');
-        if (filteredPosts.length > displayedPosts) {
+        if (sortedPosts.length > displayedPosts) {
             loadMoreBtn.style.display = 'inline-block';
         } else {
             loadMoreBtn.style.display = 'none';

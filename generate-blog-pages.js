@@ -621,7 +621,7 @@ function generateBlogHTML(post) {
 }
 
 // blogディレクトリを作成
-const blogDir = path.join(__dirname, 'blog', 'posts', '2025', '01');
+const blogDir = path.join(__dirname, 'blog', 'posts', '2025', '06');
 if (!fs.existsSync(blogDir)) {
     fs.mkdirSync(blogDir);
 }

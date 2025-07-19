@@ -194,8 +194,10 @@ if (!isArticlePage) {
         
         const postsToShow = sortedPosts.slice(0, displayedPosts);
         
-        blogGrid.innerHTML = postsToShow.map(post => `
-            <article class="blog-card" onclick="window.location.href='blog/posts/2025/01/article-${post.id}.html'">
+        blogGrid.innerHTML = postsToShow.map(post => {
+            const folderPath = post.id === 7 ? '2025/07' : '2025/06';
+            return `
+            <article class="blog-card" onclick="window.location.href='blog/posts/${folderPath}/article-${post.id}.html'">
                 <img src="${getImagePath(post.image)}" alt="${post.title}" class="blog-card-image" 
                      onerror="console.log('画像読み込みエラー:', this.src); this.style.display='none';">
                 <div class="blog-card-content">
@@ -205,12 +207,12 @@ if (!isArticlePage) {
                     </div>
                     <h3 class="blog-card-title">${post.title}</h3>
                     <p class="blog-card-excerpt">${post.excerpt}</p>
-                    <a href="blog/posts/2025/01/article-${post.id}.html" class="blog-card-link">
+                    <a href="blog/posts/${folderPath}/article-${post.id}.html" class="blog-card-link">
                         続きを読む →
                     </a>
                 </div>
-            </article>
-        `).join('');
+            </article>`;
+        }).join('');
 
         // もっと見るボタンの表示/非表示
         const loadMoreBtn = document.getElementById('loadMoreBtn');
@@ -300,8 +302,10 @@ if (isArticlePage) {
             .slice(0, 3);
         
         const relatedGrid = document.getElementById('relatedArticles');
-        relatedGrid.innerHTML = relatedPosts.map(p => `
-            <article class="blog-card" onclick="window.location.href='blog/posts/2025/01/article-${p.id}.html'">
+        relatedGrid.innerHTML = relatedPosts.map(p => {
+            const folderPath = p.id === 7 ? '2025/07' : '2025/06';
+            return `
+            <article class="blog-card" onclick="window.location.href='blog/posts/${folderPath}/article-${p.id}.html'">
                 <img src="${getImagePath(p.image)}" alt="${p.title}" class="blog-card-image" 
                      onerror="console.log('関連記事画像読み込みエラー:', this.src); this.style.display='none';">
                 <div class="blog-card-content">
@@ -310,12 +314,12 @@ if (isArticlePage) {
                         <span class="blog-card-category">${p.categoryLabel}</span>
                     </div>
                     <h3 class="blog-card-title">${p.title}</h3>
-                    <a href="blog/posts/2025/01/article-${p.id}.html" class="blog-card-link">
+                    <a href="blog/posts/${folderPath}/article-${p.id}.html" class="blog-card-link">
                         続きを読む →
                     </a>
                 </div>
-            </article>
-        `).join('');
+            </article>`;
+        }).join('');
     } else {
         // 記事が見つからない場合
         document.getElementById('articleContent').innerHTML = 

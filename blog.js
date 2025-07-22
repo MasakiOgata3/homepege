@@ -12,6 +12,16 @@ function getImagePath(imagePath) {
 // AI活用ブログ記事データ（新しい記事順）
 const blogPosts = [
     {
+        id: 8,
+        title: "社労士の私がAIで作った！ニュースレター作成アプリ開発体験記",
+        excerpt: "先輩社労士からの「ニュースレター作成アプリが欲しい」という相談を受け、プログラミング未経験の私がClaudeCodeを使って4時間でアプリを開発。バイブコーディングで月3,000円の費用削減を実現した実体験をお話しします。",
+        category: "tips",
+        categoryLabel: "活用・成功事例",
+        date: "2025年7月8日",
+        image: "./blog/Article/article-8/newsletter-creator-app.png",
+        content: "記事の内容はHTMLファイルで管理"
+    },
+    {
         id: 7,
         title: "経営者が今すぐAIを学ぶべき理由 - 生産性10倍の未来を掴む",
         excerpt: "経営者の皆様、AI技術の進化スピードは想像を超えています。「まだ大丈夫」と思っている間に、世界は大きく変わっているかもしれません。",
@@ -195,7 +205,7 @@ if (!isArticlePage) {
         const postsToShow = sortedPosts.slice(0, displayedPosts);
         
         blogGrid.innerHTML = postsToShow.map(post => {
-            const folderPath = post.id === 7 ? '2025/07' : '2025/06';
+            const folderPath = post.id === 8 ? '2025/07' : (post.id === 7 ? '2025/07' : '2025/06');
             return `
             <article class="blog-card" onclick="window.location.href='blog/posts/${folderPath}/article-${post.id}.html'">
                 <img src="${getImagePath(post.image)}" alt="${post.title}" class="blog-card-image" 
@@ -303,7 +313,7 @@ if (isArticlePage) {
         
         const relatedGrid = document.getElementById('relatedArticles');
         relatedGrid.innerHTML = relatedPosts.map(p => {
-            const folderPath = p.id === 7 ? '2025/07' : '2025/06';
+            const folderPath = p.id === 8 ? '2025/07' : (p.id === 7 ? '2025/07' : '2025/06');
             return `
             <article class="blog-card" onclick="window.location.href='blog/posts/${folderPath}/article-${p.id}.html'">
                 <img src="${getImagePath(p.image)}" alt="${p.title}" class="blog-card-image" 

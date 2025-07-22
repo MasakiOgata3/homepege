@@ -17,7 +17,7 @@ const blogPosts = [
         excerpt: "先輩社労士からの「ニュースレター作成アプリが欲しい」という相談を受け、プログラミング未経験の私がClaudeCodeを使って4時間でアプリを開発。バイブコーディングで月3,000円の費用削減を実現した実体験をお話しします。",
         category: "tips",
         categoryLabel: "活用・成功事例",
-        date: "2025年7月8日",
+        date: "2025年7月22日",
         image: "./blog/Article/article-8/newsletter-creator-app.png",
         content: "記事の内容はHTMLファイルで管理"
     },

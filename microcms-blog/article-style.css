@@ -28,7 +28,7 @@
 
 /* 記事ヘッダー */
 .article-header {
-    padding: 2rem;
+    padding: 2rem 2rem 1rem 2rem;
     border-bottom: 1px solid #eee;
 }
 
@@ -68,23 +68,26 @@
 
 /* アイキャッチ画像 */
 .article-image-container {
-    width: 100%;
+    width: 60%;
+    padding: 0;
+    text-align: center;
+    margin: 1rem auto;
+    max-height: 400px;
     overflow: hidden;
 }
 
-.article-image {
-    width: 80%;
-    height: auto;
-    max-height: 1000px;
-    object-fit: contain;
-    object-position: center;
+.article-detail .article-image {
+    width: 100%;
+    max-height: 400px;
+    height: auto !important;
     display: block;
     margin: 0 auto;
+    object-fit: contain !important;
 }
 
 /* 記事本文 */
 .article-body {
-    padding: 2rem;
+    padding: 1rem 2rem 2rem 2rem;
     line-height: 1.8;
     font-size: 1.05rem;
     color: #333;

@@ -76,7 +76,7 @@ class ArticleDetailApp {
         // 画像の設定
         const imageElement = document.getElementById('article-image');
         if (this.article.image?.url) {
-            imageElement.src = `${this.article.image.url}?w=800&h=300&fit=crop`;
+            imageElement.src = this.article.image.url;
             imageElement.alt = this.article.title;
             imageElement.style.display = 'block';
         } else {

@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>記事タイトル | ブログ | 尾形社会保険労務士事務所</title>
+    
+    <!-- リダイレクト設定 -->
+    <script>
+        // URLパラメータからIDを取得
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleId = urlParams.get('id');
+        
+        // IDに基づいてリダイレクト
+        const redirectMap = {
+            '1': '/blog/posts/2025/06/article-1.html',
+            '6': '/blog/posts/2025/06/article-6.html',
+            '7': '/blog/posts/2025/07/article-7.html',
+            '8': '/blog/posts/2025/07/article-8.html'
+        };
+        
+        if (articleId && redirectMap[articleId]) {
+            // 301リダイレクト相当の処理
+            window.location.replace(redirectMap[articleId]);
+        } else {
+            // IDがない場合はブログトップへ
+            window.location.replace('/blog.html');
+        }
+    </script>
     <meta name="description" content="記事の概要">
     <meta name="keywords" content="記事のキーワード">
     

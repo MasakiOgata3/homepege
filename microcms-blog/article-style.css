@@ -73,9 +73,9 @@
 }
 
 .article-image {
-    width: 60%;
+    width: 80%;
     height: auto;
-    max-height: 600px;
+    max-height: 1000px;
     object-fit: contain;
     object-position: center;
     display: block;

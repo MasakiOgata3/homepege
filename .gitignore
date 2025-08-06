@@ -23,3 +23,6 @@ Thumbs.db
 
 # 画像生成結果
 generated-images/
+
+# MicroCMS設定ファイル（APIキーを含む）
+microcms-blog/config.js

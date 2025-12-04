@@ -1099,18 +1099,177 @@ body {
         margin: 10% auto;
         width: 95%;
     }
-    
+
     .modal-header,
     .modal-body,
     .modal-footer {
         padding: 1rem;
     }
-    
+
     .confirm-item {
         flex-direction: column;
     }
-    
+
     .confirm-label {
         margin-bottom: 0.5rem;
+    }
+}
+
+/* Recruit Page Styles */
+.recruit-hero {
+    min-height: 60vh;
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+}
+
+.job-overview {
+    padding: 100px 0;
+    background: #f8f8f8;
+}
+
+.job-card {
+    background: white;
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.job-header h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.job-badge {
+    background: #1a1a1a;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.job-content {
+    color: #666;
+}
+
+.job-section {
+    margin-bottom: 2rem;
+}
+
+.job-section h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.job-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+.job-details {
+    display: grid;
+    gap: 2rem;
+}
+
+.detail-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #f8f8f8;
+    border-radius: 8px;
+}
+
+.detail-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.detail-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+}
+
+.detail-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.detail-content li {
+    padding: 0.5rem 0;
+    color: #666;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.detail-content li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+.application {
+    padding: 100px 0;
+    background: white;
+}
+
+.application .section-header h2 {
+    color: #1a1a1a;
+}
+
+.application .section-header p {
+    color: #666;
+}
+
+/* Responsive for Recruit Page */
+@media (max-width: 768px) {
+    .job-card {
+        padding: 2rem;
+    }
+
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .job-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .detail-item {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .job-card {
+        padding: 1.5rem;
+    }
+
+    .job-section h4 {
+        font-size: 1.1rem;
+    }
+
+    .job-description {
+        font-size: 1rem;
     }
 }

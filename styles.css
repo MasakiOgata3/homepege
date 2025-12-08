@@ -1119,6 +1119,7 @@ body {
 .recruit-hero {
     min-height: 60vh;
     background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+    padding-top: 120px;
 }
 
 .job-overview {

@@ -1122,6 +1122,17 @@ body {
     padding-top: 120px;
 }
 
+.recruit-hero .hero-title {
+    margin-bottom: 2rem;
+}
+
+.recruitment-status {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
 .job-overview {
     padding: 100px 0;
     background: #f8f8f8;

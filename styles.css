@@ -1338,7 +1338,7 @@ body {
 }
 
 .partner-header {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    background: #1a1a1a;
     padding: 2rem;
     color: white;
 }
@@ -1363,7 +1363,7 @@ body {
     color: #2c3e50;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid #1a1a1a;
 }
 
 .partner-services {
@@ -1383,7 +1383,7 @@ body {
     content: "✓";
     position: absolute;
     left: 0;
-    color: #3498db;
+    color: #1a1a1a;
     font-weight: bold;
 }
 

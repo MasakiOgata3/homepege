@@ -1285,3 +1285,215 @@ body {
         font-size: 1rem;
     }
 }
+
+/* Partners Page Styles */
+.partners-hero {
+    min-height: 60vh;
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 4rem;
+}
+
+.partners-hero .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+}
+
+.partners-hero .hero-subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.partners-section {
+    padding: 4rem 0;
+    background: #ffffff;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.partner-card {
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.partner-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.partner-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    padding: 2rem;
+    color: white;
+}
+
+.partner-header h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.partner-content {
+    padding: 2rem;
+}
+
+.partner-info {
+    margin-bottom: 2rem;
+}
+
+.partner-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.partner-services {
+    list-style: none;
+    padding: 0;
+}
+
+.partner-services li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+    font-size: 1rem;
+}
+
+.partner-services li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.address {
+    color: #555;
+    line-height: 1.8;
+}
+
+.contact-info {
+    color: #555;
+    line-height: 1.8;
+}
+
+.contact-info a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.partner-link {
+    margin-top: 2rem;
+}
+
+.partner-link .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.partner-link .btn-primary:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.partners-cta {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+    border-radius: 16px;
+    margin-top: 2rem;
+}
+
+.partners-cta h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.partners-cta p {
+    font-size: 1.125rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+/* Responsive for Partners Page */
+@media (max-width: 768px) {
+    .partners-hero .hero-title {
+        font-size: 2rem;
+    }
+
+    .partners-hero .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .partners-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .partner-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .partners-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .partners-cta p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-hero {
+        padding-top: 100px;
+    }
+
+    .partner-header {
+        padding: 1.5rem;
+    }
+
+    .partner-content {
+        padding: 1.5rem;
+    }
+
+    .partners-cta {
+        padding: 2rem 1rem;
+    }
+}

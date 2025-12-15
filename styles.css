@@ -1351,6 +1351,9 @@ body {
 
 .partner-content {
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
 }
 
 .partner-info {
@@ -1408,6 +1411,8 @@ body {
     color: #3498db;
     text-decoration: none;
     transition: color 0.3s ease;
+    display: inline;
+    word-break: keep-all;
 }
 
 .contact-info a:hover {
@@ -1416,7 +1421,7 @@ body {
 }
 
 .partner-link {
-    margin-top: 2rem;
+    margin-top: auto;
 }
 
 .partner-link .btn-primary {

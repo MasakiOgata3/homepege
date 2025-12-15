@@ -1313,7 +1313,7 @@ body {
 }
 
 .partners-section {
-    padding: 4rem 0;
+    padding: 2rem 0 4rem 0;
     background: #ffffff;
 }
 
@@ -1417,7 +1417,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background: #1a1a1a;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -1426,8 +1426,9 @@ body {
 }
 
 .partner-link .btn-primary:hover {
+    background: #333;
     transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .partners-cta {

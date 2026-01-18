@@ -33,11 +33,117 @@
       body {
         font-family: 'Noto Sans JP', sans-serif;
       }
+      /* ハンバーガーメニュー用スタイル */
+      @media(max-width:767px) {
+        .hamburger-btn {
+          display: flex !important;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+          z-index: 100;
+        }
+        .hamburger-btn span {
+          display: block;
+          width: 24px;
+          height: 2px;
+          background-color: currentColor;
+          margin: 3px 0;
+          transition: all 0.3s;
+        }
+        .hamburger-btn.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger-btn.active span:nth-child(2) {
+          opacity: 0;
+        }
+        .hamburger-btn.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -5px);
+        }
+        .mobile-menu {
+          display: none;
+          position: fixed;
+          top: 60px;
+          left: 0;
+          right: 0;
+          background: white;
+          padding: 20px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          z-index: 90;
+          flex-direction: column;
+          gap: 15px;
+        }
+        .mobile-menu.active {
+          display: flex !important;
+        }
+        .mobile-menu button {
+          width: 100%;
+          padding: 12px;
+          text-align: center;
+          font-size: 1rem;
+          color: #374151;
+          border: none;
+          background: #f3f4f6;
+          border-radius: 8px;
+          cursor: pointer;
+        }
+        .mobile-menu button.apply-btn {
+          background: #1e3a8a;
+          color: white;
+        }
+        nav .flex.items-center.gap-8 {
+          display: none !important;
+        }
+      }
+      @media(min-width:768px) {
+        .hamburger-btn, .mobile-menu {
+          display: none !important;
+        }
+      }
     </style>
     <script type="module" crossorigin src="/recruit-part/assets/index-BfSSqBxv.js"></script>
     <link rel="stylesheet" crossorigin href="/recruit-part/assets/index-cYxcfGCy.css">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // ハンバーガーメニュー機能
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          const nav = document.querySelector('nav');
+          if (!nav) return;
+
+          const navInner = nav.querySelector('.flex.items-center.justify-between');
+          if (!navInner) return;
+
+          // ハンバーガーボタンを作成
+          const hamburger = document.createElement('div');
+          hamburger.className = 'hamburger-btn';
+          hamburger.innerHTML = '<span></span><span></span><span></span>';
+          hamburger.style.display = 'none';
+          navInner.appendChild(hamburger);
+
+          // モバイルメニューを作成
+          const mobileMenu = document.createElement('div');
+          mobileMenu.className = 'mobile-menu';
+          mobileMenu.innerHTML = `
+            <button onclick="document.querySelector('[onclick*=message]')?.click(); document.querySelector('.mobile-menu').classList.remove('active'); document.querySelector('.hamburger-btn').classList.remove('active');">私たちの思い</button>
+            <button onclick="document.querySelector('[onclick*=jobs]')?.click(); document.querySelector('.mobile-menu').classList.remove('active'); document.querySelector('.hamburger-btn').classList.remove('active');">仕事内容</button>
+            <button onclick="document.querySelector('[onclick*=requirements]')?.click(); document.querySelector('.mobile-menu').classList.remove('active'); document.querySelector('.hamburger-btn').classList.remove('active');">募集要項</button>
+            <button onclick="document.querySelector('[onclick*=faq]')?.click(); document.querySelector('.mobile-menu').classList.remove('active'); document.querySelector('.hamburger-btn').classList.remove('active');">よくある質問</button>
+            <button class="apply-btn" onclick="document.querySelector('[onclick*=contact]')?.click(); document.querySelector('.mobile-menu').classList.remove('active'); document.querySelector('.hamburger-btn').classList.remove('active');">応募する</button>
+          `;
+          document.body.appendChild(mobileMenu);
+
+          // クリックイベント
+          hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+          });
+        }, 500);
+      });
+    </script>
   </body>
 </html>

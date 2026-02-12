@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -c:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nseminarページ：全変更をやり直し（構文エラー修正済み）\n\n- 人材開発支援助成金: 22.5万円 → 15万円\n- 合計助成金: 102.5万円 → 95万円\n- 研修費: 30万円 → 20万円\n- 社労士報酬: 25.5万円 → 19万円\n- 会社の手残り: 47万円 → 56万円\n- +15万円UP → +24万円UP\n- 約3.2倍 → 約3倍\n- 申請報酬のアップ → 報酬のアップ\n- 高単価案件説明文を更新\n- クリーンなスキームの本文を更新\n- DX計画策定コンサルティング費用5万円を削除\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nseminarページ：構文エラー修正（余分な括弧を削除）\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(python -c:*)"
+    ]
+  }
+}

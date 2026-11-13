@@ -920,6 +920,10 @@ a:hover {
 =========================== */
 @media (max-width: 768px) {
   /* Header */
+  .logo-name {
+    font-size: 18px;
+  }
+
   .hamburger {
     display: flex;
   }

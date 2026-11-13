@@ -374,9 +374,11 @@ a:hover {
 
 .concern-card {
   border: 1px solid #E3E6E8;
+  border-left: 3px solid #1F5E52;
   border-radius: 8px;
   padding: 24px;
   font-size: 16px;
+  background: #fff;
 }
 
 /* ===========================
@@ -397,7 +399,8 @@ a:hover {
 }
 
 .service-card {
-  background: #F7F8F8;
+  background: #fff;
+  border: 1px solid #E3E6E8;
   border-radius: 8px;
   padding: 32px;
   display: flex;
@@ -432,7 +435,7 @@ a:hover {
    Pricing
 =========================== */
 .pricing {
-  background: #F3F6F5;
+  background: #fff;
 }
 
 .pricing .inner {
@@ -560,7 +563,7 @@ a:hover {
    About
 =========================== */
 .about {
-  background: #F7F8F8;
+  background: #fff;
 }
 
 .about-inner {
@@ -696,7 +699,7 @@ a:hover {
   grid-template-columns: 120px 1fr;
   row-gap: 14px;
   column-gap: 16px;
-  background: #fff;
+  background: #F3F6F5;
   border-radius: 8px;
   padding: 28px;
 }
@@ -749,8 +752,9 @@ a:hover {
    Contact
 =========================== */
 .contact {
-  background: #1F5E52;
-  color: #fff;
+  background: #fff;
+  color: #1B2733;
+  border-top: 1px solid #E3E6E8;
 }
 
 .contact .inner {
@@ -768,24 +772,26 @@ a:hover {
 }
 
 .contact-col .heading-en {
-  color: rgba(255, 255, 255, 0.85);
+  color: #1F5E52;
 }
 
 .contact-col .heading-ja {
-  color: #fff;
+  color: #1B2733;
 }
 
 .contact-col > p {
   margin: 0;
+  color: #3C4852;
 }
 
 .contact-tel-label {
   font-size: 14px;
+  color: #5A6670;
   margin: 0;
 }
 
 .contact-tel {
-  color: #fff;
+  color: #1F5E52;
   font-size: 32px;
   font-weight: 700;
   text-decoration: none;
@@ -793,11 +799,11 @@ a:hover {
 }
 
 .contact-tel:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: #163F37;
 }
 
 .contact-form-box {
-  background: #fff;
+  background: #F3F6F5;
   color: #1B2733;
   border-radius: 8px;
   padding: 32px;

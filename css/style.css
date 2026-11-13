@@ -184,6 +184,14 @@ a:hover {
   color: #1F5E52;
 }
 
+.nav-links a.btn-sm {
+  color: #fff;
+}
+
+.nav-links a.btn-sm:hover {
+  color: #fff;
+}
+
 .nav-links a[aria-current="page"] {
   color: #1F5E52;
   font-weight: 500;

@@ -1,7 +1,0 @@
-# APIキー等の機密情報
-.env
-.env.local
-
-# テスト用ファイル
-test-*
-*.test.js

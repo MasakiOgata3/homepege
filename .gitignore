@@ -1,28 +1,9 @@
-# 機密情報を含むファイル
+# 機密情報
 .env
 .env.local
-.env.production
-.env.test
-
-# APIキー関連
-api-keys.txt
-keys/
-secrets/
-
-# Node.js
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # 一時ファイル
 .DS_Store
 Thumbs.db
 *.log
 *.tmp
-
-# 画像生成結果
-generated-images/
-
-# MicroCMS設定ファイル（APIキーを含む）
-microcms-blog/config.js

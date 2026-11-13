@@ -585,13 +585,17 @@ a:hover {
   color: #3C4852;
   margin: 0;
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .about-meta span {
   font-weight: 700;
   color: #1B2733;
-  white-space: nowrap;
+}
+
+.about-meta p {
+  margin: 0;
 }
 
 .about-office {

@@ -266,6 +266,13 @@ a:hover {
   color: #3C4852;
   max-width: 720px;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-desc p {
+  margin: 0;
 }
 
 .hero-cta {

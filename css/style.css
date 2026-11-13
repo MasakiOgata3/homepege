@@ -498,15 +498,21 @@ a:hover {
   max-width: 1160px;
   margin: 0 auto;
   padding: 88px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.about-top {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 48px;
 }
 
 .about-bio {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .about-photo {
@@ -532,6 +538,62 @@ a:hover {
   margin: 0;
 }
 
+.about-career {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-career-title {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: #1B2733;
+}
+
+.career-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.career-table thead tr {
+  background: #F3F6F5;
+}
+
+.career-table th,
+.career-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #E3E6E8;
+  text-align: left;
+}
+
+.career-table th {
+  font-weight: 700;
+  color: #1F5E52;
+  white-space: nowrap;
+}
+
+.career-table td:first-child {
+  white-space: nowrap;
+  color: #5A6670;
+}
+
+.about-meta {
+  font-size: 14px;
+  color: #3C4852;
+  margin: 0;
+  display: flex;
+  gap: 16px;
+}
+
+.about-meta span {
+  font-weight: 700;
+  color: #1B2733;
+  white-space: nowrap;
+}
+
 .about-office {
   display: flex;
   flex-direction: column;
@@ -542,8 +604,9 @@ a:hover {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 24px;
   line-height: 1.5;
-  padding-top: 48px;
+  padding-top: 32px;
   margin: 0;
+  border-top: 1px solid #E3E6E8;
 }
 
 .office-dl {

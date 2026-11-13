@@ -95,7 +95,7 @@ a:hover {
 }
 
 .btn-outline:hover {
-  background: #F3F6F5;
+  background: #EEF5FF;
   color: #1F5E52;
 }
 
@@ -241,7 +241,7 @@ a:hover {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.70);
+  background: rgba(255, 255, 255, 0.82);
   z-index: 0;
 }
 
@@ -352,7 +352,7 @@ a:hover {
 }
 
 .pitch .btn-primary:hover {
-  background: #F3F6F5;
+  background: #EEF5FF;
 }
 
 /* ===========================
@@ -384,6 +384,10 @@ a:hover {
 /* ===========================
    Services
 =========================== */
+.services {
+  background: #EEF5FF;
+}
+
 .services .inner {
   padding-top: 88px;
   padding-bottom: 88px;
@@ -505,6 +509,10 @@ a:hover {
 /* ===========================
    Scope
 =========================== */
+.scope {
+  background: #EEF5FF;
+}
+
 .scope .inner {
   padding-top: 88px;
   padding-bottom: 88px;
@@ -636,7 +644,7 @@ a:hover {
 }
 
 .career-table thead tr {
-  background: #F3F6F5;
+  background: #EEF5FF;
 }
 
 .career-table th,
@@ -699,7 +707,7 @@ a:hover {
   grid-template-columns: 120px 1fr;
   row-gap: 14px;
   column-gap: 16px;
-  background: #F3F6F5;
+  background: #EEF5FF;
   border-radius: 8px;
   padding: 28px;
 }
@@ -716,6 +724,10 @@ a:hover {
 /* ===========================
    FAQ
 =========================== */
+.faq {
+  background: #EEF5FF;
+}
+
 .faq .inner {
   padding-top: 88px;
   padding-bottom: 88px;
@@ -803,7 +815,7 @@ a:hover {
 }
 
 .contact-form-box {
-  background: #F3F6F5;
+  background: #EEF5FF;
   color: #1B2733;
   border-radius: 8px;
   padding: 32px;
@@ -920,7 +932,7 @@ a:hover {
    Blog Banner
 =========================== */
 .blog-banner {
-  background: #F3F6F5;
+  background: #EEF5FF;
 }
 
 .blog-banner .inner {
@@ -960,7 +972,7 @@ a:hover {
    Partners Page
 =========================== */
 .page-hero {
-  background: #F3F6F5;
+  background: #EEF5FF;
 }
 
 .page-hero .inner {
@@ -1065,7 +1077,7 @@ a:hover {
 }
 
 .partners-cta {
-  background: #F3F6F5;
+  background: #EEF5FF;
 }
 
 .partners-cta .inner {
@@ -1386,7 +1398,7 @@ a:hover {
 }
 
 .option-group-title {
-  background: #F3F6F5;
+  background: #EEF5FF;
   padding: 10px 20px;
   font-weight: 700;
   font-size: 15px;

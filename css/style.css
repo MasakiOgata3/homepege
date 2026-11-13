@@ -586,16 +586,19 @@ a:hover {
   gap: 56px;
 }
 
-.about-top {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 48px;
-}
-
 .about-bio {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 760px;
+}
+
+.about-meta-row {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-top: 8px;
 }
 
 .about-banner-photo {

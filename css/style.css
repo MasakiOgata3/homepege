@@ -95,7 +95,7 @@ a:hover {
 }
 
 .btn-outline:hover {
-  background: #EEF5FF;
+  background: #EAF4F1;
   color: #1F5E52;
 }
 
@@ -352,7 +352,7 @@ a:hover {
 }
 
 .pitch .btn-primary:hover {
-  background: #EEF5FF;
+  background: #EAF4F1;
 }
 
 /* ===========================
@@ -385,7 +385,7 @@ a:hover {
    Services
 =========================== */
 .services {
-  background: #EEF5FF;
+  background: #EAF4F1;
 }
 
 .services .inner {
@@ -510,7 +510,7 @@ a:hover {
    Scope
 =========================== */
 .scope {
-  background: #EEF5FF;
+  background: #EAF4F1;
 }
 
 .scope .inner {
@@ -644,7 +644,7 @@ a:hover {
 }
 
 .career-table thead tr {
-  background: #EEF5FF;
+  background: #EAF4F1;
 }
 
 .career-table th,
@@ -707,7 +707,7 @@ a:hover {
   grid-template-columns: 120px 1fr;
   row-gap: 14px;
   column-gap: 16px;
-  background: #EEF5FF;
+  background: #EAF4F1;
   border-radius: 8px;
   padding: 28px;
 }
@@ -725,7 +725,7 @@ a:hover {
    FAQ
 =========================== */
 .faq {
-  background: #EEF5FF;
+  background: #EAF4F1;
 }
 
 .faq .inner {
@@ -815,7 +815,7 @@ a:hover {
 }
 
 .contact-form-box {
-  background: #EEF5FF;
+  background: #EAF4F1;
   color: #1B2733;
   border-radius: 8px;
   padding: 32px;
@@ -932,7 +932,7 @@ a:hover {
    Blog Banner
 =========================== */
 .blog-banner {
-  background: #EEF5FF;
+  background: #EAF4F1;
 }
 
 .blog-banner .inner {
@@ -972,7 +972,7 @@ a:hover {
    Partners Page
 =========================== */
 .page-hero {
-  background: #EEF5FF;
+  background: #EAF4F1;
 }
 
 .page-hero .inner {
@@ -1077,7 +1077,7 @@ a:hover {
 }
 
 .partners-cta {
-  background: #EEF5FF;
+  background: #EAF4F1;
 }
 
 .partners-cta .inner {
@@ -1398,7 +1398,7 @@ a:hover {
 }
 
 .option-group-title {
-  background: #EEF5FF;
+  background: #EAF4F1;
   padding: 10px 20px;
   font-weight: 700;
   font-size: 15px;

@@ -1030,6 +1030,13 @@ a:hover {
     gap: 16px;
   }
 
+  .nav-links a.btn-sm {
+    background: #1F5E52;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+
   /* Hero */
   .hero .inner {
     padding-top: 56px;

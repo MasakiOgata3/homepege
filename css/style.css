@@ -596,9 +596,9 @@ a:hover {
   gap: 16px;
 }
 
-.about-greeting-photo {
+.about-banner-photo {
   width: 100%;
-  height: 260px;
+  height: 300px;
   object-fit: cover;
   object-position: center;
   border-radius: 8px;

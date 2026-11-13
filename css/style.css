@@ -872,6 +872,61 @@ a:hover {
   margin: 0;
 }
 
+.footer-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-nav a {
+  color: #D5DDDA;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+/* ===========================
+   Blog Banner
+=========================== */
+.blog-banner {
+  background: #F3F6F5;
+}
+
+.blog-banner .inner {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.blog-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.blog-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.blog-banner-title {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: #1B2733;
+}
+
+.blog-banner-text p {
+  margin: 0;
+  color: #3C4852;
+  max-width: 560px;
+}
+
 /* ===========================
    Partners Page
 =========================== */

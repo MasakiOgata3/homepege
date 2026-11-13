@@ -293,6 +293,50 @@ a:hover {
 }
 
 /* ===========================
+   Pitch
+=========================== */
+.pitch {
+  background: #1F5E52;
+  color: #fff;
+}
+
+.pitch .inner {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.pitch-inner {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pitch-heading {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.pitch p {
+  margin: 0;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pitch .btn-primary {
+  background: #fff;
+  color: #1F5E52;
+  align-self: flex-start;
+}
+
+.pitch .btn-primary:hover {
+  background: #F3F6F5;
+}
+
+/* ===========================
    Concerns
 =========================== */
 .concerns .inner {

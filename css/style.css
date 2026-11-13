@@ -277,7 +277,6 @@ a:hover {
 .hero-desc {
   font-size: 18px;
   color: #2A3540;
-  max-width: 720px;
   margin: 0;
   display: flex;
   flex-direction: column;
